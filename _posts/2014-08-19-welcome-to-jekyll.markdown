@@ -10,7 +10,18 @@ We made an awesome game at Innogame's 2014 Gamejam at Gamescom. Here are some pi
 ![MainMenu]({{ site.url }}/images/2014_08_19_pillowcastle1_small.png)
 ![Ingame]({{ site.url }}/images/2014_08_19_pillowcastle2_small.png)
 
-(see also http://www.innogames.com/de/blog/2014/08/games-jam/#)
+You can find a download link at [Innogame's blogpost](http://www.innogames.com/de/blog/2014/08/games-jam/#). For the best gameplay, you need two X-box controllers. Alternatively, it is possible to play the game with the keyboard with the following keys:
 
+### Player 1
+* move around with WASD
+* shoot with E
+* pickup/place parts with Q
+
+### Player 2
+* move around with JKLI
+* shoot with O
+* pickup/place parts with U
+
+It's already fun to play, but there are still some issues with the game. Hopefully, we will update it with improved graphics and gameplay in the future.
 
 
