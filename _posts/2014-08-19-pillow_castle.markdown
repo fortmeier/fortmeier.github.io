@@ -10,6 +10,8 @@ We made an awesome game at Innogame's 2014 Gamejam at Gamescom. Here are some pi
 ![MainMenu]({{ site.url }}/images/2014_08_19_pillowcastle1_small.png)
 ![Ingame]({{ site.url }}/images/2014_08_19_pillowcastle2_small.png)
 
+It is implemented in Java, using the libraries libgdx and artemis.
+
 You can find a download link at [Innogame's blogpost](http://www.innogames.com/de/blog/2014/08/games-jam/#). For the best gameplay, you need two X-box controllers. Alternatively, it is possible to play the game with the keyboard with the following keys:
 
 ### Player 1
