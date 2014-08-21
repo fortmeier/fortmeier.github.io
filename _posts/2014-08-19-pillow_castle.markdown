@@ -12,7 +12,7 @@ We made an awesome game at Innogame's 2014 Gamejam at Gamescom. Here are some pi
 
 It is implemented in Java, using the libraries libgdx and artemis.
 
-You can find a download link at [Innogame's blogpost](http://www.innogames.com/de/blog/2014/08/games-jam/#). For the best gameplay, you need two X-box controllers. Alternatively, it is possible to play the game with the keyboard with the following keys:
+You can find a download link at [Innogame's blogpost](http://www.innogames.com/de/blog/2014/08/games-jam/#) or download an updated version [here](http://keksdev.de/v42.jar). For the best gameplay, you need two X-box controllers. Alternatively, it is possible to play the game with the keyboard with the following keys:
 
 ### Player 1
 * move around with WASD
