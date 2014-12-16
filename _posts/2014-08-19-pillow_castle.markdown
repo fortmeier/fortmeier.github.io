@@ -2,7 +2,9 @@
 layout: post
 title:  "Pillowfight!"
 date:   2014-08-19 21:07:47
+current: True
 categories: gamejam
+teaserimage: /images/2014_08_19_pillowcastle1_small.png
 ---
 
 We made an awesome game at Innogame's 2014 Gamejam at Gamescom. Here are some pictures:

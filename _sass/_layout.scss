@@ -161,6 +161,7 @@
 /**
  * Page content
  */
+
 .page-content {
     padding: $spacing-unit 0;
 }
@@ -193,6 +194,15 @@
 /**
  * Posts
  */
+
+.post-list {
+    display: table;
+}
+
+.post {
+    width: 500px;
+    display: table-cell;
+}
 .post-header {
     margin-bottom: $spacing-unit;
 }
@@ -207,7 +217,14 @@
     }
 }
 
+.post-teaser {
+    width: 100px;
+    display: table-cell;
+}
+
 .post-content {
+    padding-left: 10px;
+    display: table-cell;
     margin-bottom: $spacing-unit;
 
     h2 {
