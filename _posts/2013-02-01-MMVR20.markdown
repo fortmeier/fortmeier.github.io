@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Nextmed/MMVR20 Poster:"
+date:   2013-02-01 21:07:47
+categories: gamejam
+teaserimage: "/images/MMVR21_teaser.png"
+
+---
+
+I presented my poster ... at MMVR20 in San Diego, CA.
+
+

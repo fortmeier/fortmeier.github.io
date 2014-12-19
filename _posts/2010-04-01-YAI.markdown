@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Monsters in the scary night"
+date:   2010-04-01 21:07:47
+categories: science, games, ai
+tech: C#, Unity, A*, OCEAN, Behavior-Trees
+teaserimage: "/images/ai_teaser.png"
+---
+
+A game with artificial intelligence has been developed using A*, Fuzzy-Logic, Naives-Bayes-Classifier (with m-estimates), Goal-Trees and OCEAN-Personality-Modelling. It was implemented via the UNITY-Game Engine.
+

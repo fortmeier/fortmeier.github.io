@@ -2,29 +2,43 @@
 layout: default
 ---
 
-<div class="home">
-
+<div class="container">
+    
+    <div class="jumbotron">
+    <h1>Those things CS</h1>
+    <h3>computer science and game development projects by Dirk Fortmeier</h3>
+    </div>
+    <div class="alert alert-danger" role="alert">This site is under construction</div>
+    {% capture currentyear %}{{ site.time | date: '%y' }}{% endcapture %}
     {% for post in site.posts %}
     {% capture year %}{{post.date | date: "%Y"}}{% endcapture %}
     {% if lastyear and year != lastyear %}
       </div>
     {% endif %}
     {% if year != lastyear %}
+      {% if site.time < post.date %}
+      <h2>current</h2>
+      {% else %}
       <h2>{{ year }}</h2>
-      <div class="post-list" >
+      {% endif %} 
+      <div class="row" >
       {% capture lastyear %}{{ year }}{% endcapture %}
     {% endif %}
-      <div class="post">
-        <div class="post-teaser">
+      <div class="col-md-4 col-xs-6">
+        <div class="post-teaser media-left">
           <img class="post-teaser" src="{{ post.teaserimage }}" />
         </div>
-        <div class="post-content" >
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <div class="media-body" >
+          <a class="media-heading" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           <p>
             {{ post.excerpt }}
+          </p>
+          <p class="post-tech">
+            Uses: {{ post.tech }}
           </p>
         </div>
       </div>
     {% endfor %}
-
+    </div>
+    <hr/>
 </div>
