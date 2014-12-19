@@ -3,7 +3,7 @@ layout: post
 title:  "Virtual museum"
 date:   2009-04-19 21:07:47
 categories: science
-teaserimage: "/images/MMVR21_teaser.png"
+teaserimage: "/images/exhibition_teaser.png"
 tech: C++, OpenCV, Virtual-Reality, Visual-Computing, Particle-Filter
 ---
 
