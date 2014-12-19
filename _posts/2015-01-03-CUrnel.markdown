@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "CUrnel"
+date:   2015-01-01 21:07:47
+categories: science
+tech: C++, Cuda, Python, SymPy 
+teaserimage: "/images/FIPSI_teaser.png"
+---
+
+This project aimed at automatic generation of image processing code. The idea is to formulate a image processing operation as minimization problem using a variational formulation and generate the discrete implemenation automatically.
+
+Until now, I got image smoothing by diffusion to work.
