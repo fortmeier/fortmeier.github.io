@@ -4,6 +4,7 @@ title:  "Nextmed/MMVR21 Talk:"
 date:   2014-10-19 21:07:47
 categories: gamejam
 teaserimage: "/images/MMVR21_teaser.png"
+published: false
 
 ---
 

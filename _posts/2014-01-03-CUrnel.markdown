@@ -1,0 +1,100 @@
+---
+layout: post
+title:  "CUrnel"
+date:   2014-01-03 21:07:47
+categories: science
+tech: C++, Cuda, Python, SymPy 
+teaserimage: "/images/curnel_teaser.png"
+---
+
+This project aimed at automatic generation of image processing code. The idea is to formulate a image processing operation as minimization problem using a variational formulation and generate the discrete implemenation automatically. It uses SymPy to symbolically formulate an expression and generate the derivative. 
+
+Based on this, the CUrnel code generates C++ and Cuda code for numerically solving the problem.
+For instance, a diffusion operation on a two dimensional vector field can be expressed as the minimization problem
+
+$$ \mathcal{J}[u]=\left\Vert \nabla u\right\Vert ^{2}\overset{u}{\to}\mathrm{min} $$
+
+where $$u$$ is the vector field. Obviously, every constant vector field is a solution for this in case no boundary conditions are given. How can this be expressed using SymPy? In my current implementation of CUrnel, the gradient operator is not directly available and the expression has to given like this:
+
+{% highlight python lineos %}
+# S = || grad u || ^ 2 = (du_dx^2 + du_dy^2)
+J = (u(x,y).diff(x)**2 + u(x,y).diff(y)**2)
+{% endhighlight %}
+
+Applying the Euler-Lagrange equation and using the solution in an forward Euler integration gives
+{% highlight python lineos %}
+dJ = EulerLagrange2D(J)
+I_diff = dJ * alpha1 + u(x,y)
+{% endhighlight %}
+
+The expression then can be given to CUrnel to first generate a convolution kernel:
+
+{% highlight python lineos %}
+K_diff = CreateKernel2D(I_diff, ['u'])
+{% endhighlight %}
+
+and finally, the resulting Cuda code can be generated:
+
+{% highlight python lineos %}
+generateCodeAndSource( K_diff, "diffusion", ['float alpha1'] )
+{% endhighlight %}
+
+It looks like this:
+
+{% highlight c++ lineos %}
+#pragma once
+
+#include <stdio.h>
+
+#include <field.cuh>
+
+using namespace CUrnel;
+
+template<typename T> 
+struct diffusionFunctor {
+  float alpha1;
+__device__  diffusionFunctor( float alpha1_) : 
+    alpha1(alpha1_ ){}
+
+T __device__ operator() ( typename NeightborType<T,R2>::type & m )
+{
+  T r = T();
+  r += (0) * m.m11;
+  r += (-0.5*alpha1) * m.m12;
+  r += (0) * m.m13;
+  r += (-0.5*alpha1) * m.m21;
+  r += (2.0*alpha1 + 1) * m.m22;
+  r += (-0.5*alpha1) * m.m23;
+  r += (0) * m.m31;
+  r += (-0.5*alpha1) * m.m32;
+  r += (0) * m.m33;
+  return r;
+}
+};
+template<typename AlterableFieldType>
+__global__ void diffusionKernel( AlterableFieldType fieldIn, 
+typename AlterableFieldType::fieldtype* inData, typename AlterableFieldType::fieldtype* outData, float alpha1)
+{
+  typedef typename AlterableFieldType::fieldtype T;	
+  fieldIn.apply( diffusionFunctor<T>(alpha1), inData, outData );
+}
+
+template<typename AlterableFieldType>
+__host__ void apply_diffusion(
+    AlterableFieldType& fieldIn,
+    AlterableFieldType& fieldOut,
+    float alpha1
+)
+{
+  typedef typename AlterableFieldType::fieldtype T;
+  
+  T* fieldInData = fieldIn.getDeviceDataPointer();
+  T* fieldOutData = fieldOut.getDeviceDataPointer();
+  
+  dim3 blocks = fieldIn.getBlocks();
+  dim3 threads = fieldIn.getThreads();
+  
+  diffusionKernel<AlterableFieldType><<<blocks, threads>>>( 
+      fieldIn, fieldInData, fieldOutData ,alpha1 );
+}
+{% endhighlight %}
