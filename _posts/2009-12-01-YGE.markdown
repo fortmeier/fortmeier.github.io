@@ -7,6 +7,14 @@ tech: C++, Visual-Studio, OpenGL, Virtual-Reality, ODE
 teaserimage: "/images/gyrowings_teaser.png"
 ---
 
-BA Thesis titled: It's already fun to play, but there are still some issues with the game. Hopefully, we will update it with improved graphics and gameplay in the future.
+The first module of my Masters studies consisted of the implementation of a game engine and the application of it.
+
+This I solved by combining OpenGL, the physics engine ODE and OpenAL into a single framework. To demonstrate the capabilities of the engine, I used it to create a gyrocopter flying simulator.
+
+It featured:
+
+* Multiple levels
+* Realistic physics
+* A developer console
 
 
