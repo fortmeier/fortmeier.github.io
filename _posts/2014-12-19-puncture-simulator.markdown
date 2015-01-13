@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Framework for Image based Puncture Simulation"
-date:   2015-01-01 21:07:47
+date:   2014-12-19 21:07:47
 categories: science
 tech: C++, Cuda, OpenGL, VTK, OpenHaptics, Eclipse, Visual-Studio, SVN, git, Virtual-Reality, Haptics, Volume-Rendering, bullet, libcml, libxml2, CMake
 teaserimage: "/images/FIPSI_teaser.png"
