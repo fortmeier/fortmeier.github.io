@@ -1,3 +1,21 @@
+div {
+  font-family: 'PT Sans', sans-serif;
+}
+
+a:hover {
+  color: #001c58;
+}
+
+a {
+  color: #555;
+}
+
+.navi {
+  margin-top: 35px;
+}
+.post-box {
+  margin-bottom: 50px;
+}
 .post-teaser {
   width: 100px;
 }
