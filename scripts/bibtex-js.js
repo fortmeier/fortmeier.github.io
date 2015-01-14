@@ -387,7 +387,7 @@
         },
 
         parseAuthors: function(value) {
-            value = value.replace(/, (.)[^ <>]*/g, ", $1. ");
+            value = value.replace(/, (.)[^ <>]*/g, ", $1.");
             value = value.replace(/ and /g, ", ");
             return value;
         },
