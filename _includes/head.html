@@ -16,6 +16,9 @@
 <!-- Optinal font -->
 <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="./scripts/bibtex-js.js"></script>
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
@@ -24,9 +27,58 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link href="/css/syntax.css" rel="stylesheet">
 
-
-    <script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    <script id="bibtex-template" type="text/template">
+        <div class="template" style="display:none">
+        <li class="ARTICLE">
+            <span class="author"></span>:
+            "<span class="title"></span>",
+            <span class="journal"></span>,
+            <span class="if volume"><span class="volume"></span>,</span>
+            <span class="if number"><span class="number"></span>,</span>
+            <span class="if pages"><span class="pages"></span>,</span>
+            <span class="year" ></span>
+        </li>
+        <li class="PHDTHESIS">
+            <span class="author"></span>
+            "<span class="title"></span>",
+            (<span class="type"></span>),
+            <span class="school"></span>,
+            <span class="year" ></span>
+        </li>
+        <li class="INPROCEEDINGS">
+            <span class="author"></span> 
+            "<span class="title"></span>",
+            In: <span class="booktitle"></span>,
+            <span class="if series"><span class="series"></span>,</span>
+            <span class="if publiser"><span class="publisher"></span>,</span>
+            <span class="if volume"><span class="volume"></span>,</span>
+            <span class="if number"><span class="number"></span>,</span>
+            <span class="if pages"><span class="pages"></span>,</span>            
+            (<span class="year" ></span>)
+        </li>
+        <li class="CONFERENCE">
+            <span class="author"></span> 
+            "<span class="title"></span>",
+            In: <span class="booktitle"></span>,
+            <span class="if series"><span class="series"></span>,</span>
+            <span class="if publiser"><span class="publisher"></span>,</span>
+            <span class="if volume"><span class="volume"></span>,</span>
+            <span class="if number"><span class="number"></span>,</span>
+            <span class="if pages"><span class="pages"></span>,</span>            
+            (<span class="year" ></span>)
+        </li>
+        <li class="INCOLLECTION">
+            <span class="author"></span> 
+            "<span class="title"></span>",
+            In: <span class="booktitle"></span>,
+            <span class="if series"><span class="series"></span>,</span>
+            <span class="if publiser"><span class="publisher"></span>,</span>
+            <span class="if volume"><span class="volume"></span>,</span>
+            <span class="if number"><span class="number"></span>,</span>
+            <span class="if pages"><span class="pages"></span>,</span>            
+            (<span class="year" ></span>)
+        </li>
+        </div>
     </script>
 
 </head>

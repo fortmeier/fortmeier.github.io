@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="container">
+<h2>List of my publications:</h2>
+
+
+<script type="text/javascript">
+
+  function bibtex_js_draw(data) {
+    $('#bibtex').BibtexJS({
+      TemplateString: $("#bibtex-template").text(),
+      BibtexString: data,
+      AuthorToHighlight: "Fortmeier, Dirk"
+    });
+  }
+
+  $(document).ready( function() {
+    $.get( "mypublications.bib", bibtex_js_draw );
+  } );
+</script> 
+
+<ul id="bibtex"> </ul>
+
+</div>
