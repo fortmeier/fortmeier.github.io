@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Bachelorthesis"
+title:  "Bachelor's thesis"
 date:   2009-01-01 21:07:47
 categories: science
 tech: C++, Visual-Studio, SVN, OpenGL, Augmented-Reality, Virtual-Reality, Visual-Computing, SLAM
 teaserimage: "/images/BA_teaser.png"
 ---
 
-For my Bachelors Thesis, I implemented and researched a tracking algorithm for augmented reality based on a particle filter. 
+For my Bachelor's thesis, I implemented and researched a tracking algorithm for augmented reality based on a particle filter. 
 
 This project included:
 

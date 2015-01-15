@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Masterthesis"
+title:  "Master's thesis"
 date:   2010-01-01 21:07:47
 categories: science
 tech: Finite-Element-Method, C++, Visual Studio, OpenGL
 teaserimage: "/images/MA_teaser.png"
 ---
 
-In my master thesis I implement a method for the simulation of insertion of flexible needles into soft tissue. The soft-tissue simulation was based on linear-elastic continuum dynamics and used a finite-element method for discretization.
+In my master's thesis I implement a method for the simulation of insertion of flexible needles into soft tissue. The soft-tissue simulation was based on linear-elastic continuum dynamics and used a finite-element method for discretization.
 

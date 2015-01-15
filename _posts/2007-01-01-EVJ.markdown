@@ -7,6 +7,6 @@ teaserimage: "/images/evj_teaser.png"
 tech: Ruby, Rails, svn
 ---
 
-An early detour from my focus on virtual reality and an early use of Ruby on Rails.
+A detour to web development using Ruby on Rails.
 
 Together with my friend [Lennart](http://works.lmaa.name/), we coded the custom content managment system "Sir Veillance" and used it to create a website of the EVJ Schöppenstedt. After being used for several years, it now has been replaced by TYPO3 by the webmaster. 
